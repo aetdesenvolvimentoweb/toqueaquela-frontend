@@ -1,8 +1,12 @@
+import { env } from '$env/dynamic/public';
 import { getToken } from './auth';
 
-// PUBLIC_API_URL e' exposto ao client via SvelteKit. Default = backend dev local.
-const API_BASE: string =
-  (import.meta.env.PUBLIC_API_URL as string | undefined) ?? 'http://localhost:3000';
+// PUBLIC_API_URL e' exposto via SvelteKit ($env/dynamic/public).
+// IMPORTANTE: import.meta.env.PUBLIC_API_URL NAO funciona — Vite so injeta
+// VITE_* automaticamente; PUBLIC_* eh especifico do SvelteKit e fica em
+// $env/static/public (build-time) ou $env/dynamic/public (runtime).
+// Default = backend dev local.
+const API_BASE: string = env.PUBLIC_API_URL || 'http://localhost:3000';
 
 export type ApiError = { code: string; status: number };
 
