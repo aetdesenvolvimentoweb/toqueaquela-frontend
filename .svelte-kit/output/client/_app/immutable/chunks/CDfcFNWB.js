@@ -1,1 +1,0 @@
-const o=t=>`R$ ${(t/100).toFixed(2).replace(".",",")}`,r=t=>{if(t==null)return"";const a=Math.floor(t/60),n=String(t%60).padStart(2,"0");return`${a}:${n}`},e=()=>`${Date.now()}-${Math.random().toString(36).slice(2,10)}`;export{r as a,o as f,e as n};
