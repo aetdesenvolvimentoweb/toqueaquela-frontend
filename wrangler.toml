@@ -12,3 +12,9 @@ name = "toqueaquela-frontend"
 compatibility_date = "2025-05-01"
 compatibility_flags = ["nodejs_compat"]
 pages_build_output_dir = ".svelte-kit/cloudflare"
+
+# URL do backend (Worker). Versionada porque eh publica — qualquer GET na
+# /health revela. Se trocar para custom domain (api.toqueaquela.com.br),
+# atualizar aqui e push: client bundle eh rebuildado automaticamente.
+[vars]
+PUBLIC_API_URL = "https://toqueaquela-backend.aetdesenvolvimentoweb.workers.dev"
