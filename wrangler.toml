@@ -1,9 +1,13 @@
+# Config do Pages (NAO eh um Worker). Existe principalmente para que
+# o @sveltejs/adapter-cloudflare nao suba a arvore procurando outra config.
+#
+# IMPORTANTE: ao conectar este repo ao Cloudflare Pages no dashboard:
+#   Build command: bun run build
+#   Build output: .svelte-kit/cloudflare
+#   Deploy command: (deixar VAZIO)
+# Se o dashboard auto-preencher "npx wrangler deploy", APAGAR — esse comando
+# eh de Workers e nao funciona para Pages.
+
 name = "toqueaquela-frontend"
 compatibility_date = "2025-05-01"
 pages_build_output_dir = ".svelte-kit/cloudflare"
-
-# Variavel publica (acessivel ao bundle do client via import.meta.env.PUBLIC_API_URL)
-# Para producao, configurar no dashboard Pages → Settings → Environment variables:
-#   PUBLIC_API_URL = https://toqueaquela-backend.<seu-subdominio>.workers.dev
-[vars]
-PUBLIC_API_URL = "http://localhost:3000,https://toqueaquela-backend.aetdesenvolvimentoweb.workers.dev"
