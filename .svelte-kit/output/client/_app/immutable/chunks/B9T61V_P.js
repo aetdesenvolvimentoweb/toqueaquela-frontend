@@ -1,0 +1,1 @@
+const e="toque-aquela:token";function o(){return typeof localStorage>"u"?null:localStorage.getItem(e)}function n(t){localStorage.setItem(e,t)}function a(){localStorage.removeItem(e)}function l(){return o()!==null}export{a as c,o as g,l as i,n as s};
